@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="HDetalle.jspx" id="d1">
+            <af:messages id="m1"/>
+            <af:form id="f1">
+                <af:pageTemplate viewId="/oracle/templates/threeColumnTemplate.jspx" id="pt1">
+                    <f:facet name="center">
+                        <af:table value="#{bindings.HistorialDetalleView1.collectionModel}" var="row"
+                                  rows="#{bindings.HistorialDetalleView1.rangeSize}"
+                                  emptyText="#{bindings.HistorialDetalleView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  rowBandingInterval="0"
+                                  selectedRowKeys="#{bindings.HistorialDetalleView1.collectionModel.selectedRow}"
+                                  selectionListener="#{bindings.HistorialDetalleView1.collectionModel.makeCurrent}"
+                                  rowSelection="single" fetchSize="#{bindings.HistorialDetalleView1.rangeSize}"
+                                  filterModel="#{bindings.HistorialDetalleView1Query.queryDescriptor}"
+                                  filterVisible="true"
+                                  queryListener="#{bindings.HistorialDetalleView1Query.processQuery}" varStatus="vs"
+                                  id="t1" partialTriggers="::b1 ::b2 ::b3 ::b4">
+                            <af:column sortProperty="#{bindings.HistorialDetalleView1.hints.IdDetalle.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.HistorialDetalleView1.hints.IdDetalle.label}" id="c1">
+                                <af:outputText value="#{row.IdDetalle}"
+                                               shortDesc="#{bindings.HistorialDetalleView1.hints.IdDetalle.tooltip}"
+                                               id="ot1">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.HistorialDetalleView1.hints.IdDetalle.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.HistorialDetalleView1.hints.CantidadProducto.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.HistorialDetalleView1.hints.CantidadProducto.label}"
+                                       id="c2">
+                                <af:outputText value="#{row.CantidadProducto}"
+                                               shortDesc="#{bindings.HistorialDetalleView1.hints.CantidadProducto.tooltip}"
+                                               id="ot2">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.HistorialDetalleView1.hints.CantidadProducto.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.HistorialDetalleView1.hints.FechaInicioAlquiler.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.HistorialDetalleView1.hints.FechaInicioAlquiler.label}"
+                                       id="c3">
+                                <f:facet name="filter">
+                                    <af:inputDate value="#{bindings.HistorialDetalleView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.FechaInicioAlquiler.value}"
+                                                  id="id4">
+                                        <af:convertDateTime pattern="#{bindings.HistorialDetalleView1.hints.FechaInicioAlquiler.format}"/>
+                                    </af:inputDate>
+                                </f:facet>
+                                <af:outputText value="#{row.FechaInicioAlquiler}"
+                                               shortDesc="#{bindings.HistorialDetalleView1.hints.FechaInicioAlquiler.tooltip}"
+                                               id="ot3">
+                                    <af:convertDateTime pattern="#{bindings.HistorialDetalleView1.hints.FechaInicioAlquiler.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.HistorialDetalleView1.hints.FechaFinalAlquiler.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.HistorialDetalleView1.hints.FechaFinalAlquiler.label}"
+                                       id="c4">
+                                <f:facet name="filter">
+                                    <af:inputDate value="#{bindings.HistorialDetalleView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.FechaFinalAlquiler.value}"
+                                                  id="id5">
+                                        <af:convertDateTime pattern="#{bindings.HistorialDetalleView1.hints.FechaFinalAlquiler.format}"/>
+                                    </af:inputDate>
+                                </f:facet>
+                                <af:outputText value="#{row.FechaFinalAlquiler}"
+                                               shortDesc="#{bindings.HistorialDetalleView1.hints.FechaFinalAlquiler.tooltip}"
+                                               id="ot4">
+                                    <af:convertDateTime pattern="#{bindings.HistorialDetalleView1.hints.FechaFinalAlquiler.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.HistorialDetalleView1.hints.AccionUsuario.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.HistorialDetalleView1.hints.AccionUsuario.label}" id="c5">
+                                <af:outputText value="#{row.AccionUsuario}"
+                                               shortDesc="#{bindings.HistorialDetalleView1.hints.AccionUsuario.tooltip}"
+                                               id="ot5"/>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.HistorialDetalleView1.hints.FechaSistema.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.HistorialDetalleView1.hints.FechaSistema.label}" id="c6">
+                                <f:facet name="filter">
+                                    <af:inputDate value="#{bindings.HistorialDetalleView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.FechaSistema.value}"
+                                                  id="id6">
+                                        <af:convertDateTime pattern="#{bindings.HistorialDetalleView1.hints.FechaSistema.format}"/>
+                                    </af:inputDate>
+                                </f:facet>
+                                <af:outputText value="#{row.FechaSistema}"
+                                               shortDesc="#{bindings.HistorialDetalleView1.hints.FechaSistema.tooltip}"
+                                               id="ot6">
+                                    <af:convertDateTime pattern="#{bindings.HistorialDetalleView1.hints.FechaSistema.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.HistorialDetalleView1.hints.Descripcion.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.HistorialDetalleView1.hints.Descripcion.label}" id="c7">
+                                <af:outputText value="#{row.Descripcion}"
+                                               shortDesc="#{bindings.HistorialDetalleView1.hints.Descripcion.tooltip}"
+                                               id="ot7"/>
+                            </af:column>
+                        </af:table>
+                    </f:facet>
+                    <f:facet name="header"/>
+                    <f:facet name="start">
+                        <af:panelFormLayout id="pfl1">
+                            <af:inputText value="#{bindings.IdDetalle.inputValue}"
+                                          label="#{bindings.IdDetalle.hints.label}"
+                                          required="#{bindings.IdDetalle.hints.mandatory}" readOnly="true"
+                                          columns="#{bindings.IdDetalle.hints.displayWidth}"
+                                          maximumLength="#{bindings.IdDetalle.hints.precision}"
+                                          shortDesc="#{bindings.IdDetalle.hints.tooltip}" id="it1">
+                                <f:validator binding="#{bindings.IdDetalle.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.IdDetalle.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.CantidadProducto.inputValue}"
+                                          label="#{bindings.CantidadProducto.hints.label}"
+                                          required="#{bindings.CantidadProducto.hints.mandatory}" readOnly="true"
+                                          columns="#{bindings.CantidadProducto.hints.displayWidth}"
+                                          maximumLength="#{bindings.CantidadProducto.hints.precision}"
+                                          shortDesc="#{bindings.CantidadProducto.hints.tooltip}" id="it2">
+                                <f:validator binding="#{bindings.CantidadProducto.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.CantidadProducto.format}"/>
+                            </af:inputText>
+                            <af:inputDate value="#{bindings.FechaInicioAlquiler.inputValue}" readOnly="true"
+                                          label="#{bindings.FechaInicioAlquiler.hints.label}"
+                                          required="#{bindings.FechaInicioAlquiler.hints.mandatory}"
+                                          columns="#{bindings.FechaInicioAlquiler.hints.displayWidth}"
+                                          shortDesc="#{bindings.FechaInicioAlquiler.hints.tooltip}" id="id1">
+                                <f:validator binding="#{bindings.FechaInicioAlquiler.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.FechaInicioAlquiler.format}"/>
+                            </af:inputDate>
+                            <af:inputDate value="#{bindings.FechaFinalAlquiler.inputValue}" readOnly="true"
+                                          label="#{bindings.FechaFinalAlquiler.hints.label}"
+                                          required="#{bindings.FechaFinalAlquiler.hints.mandatory}"
+                                          columns="#{bindings.FechaFinalAlquiler.hints.displayWidth}"
+                                          shortDesc="#{bindings.FechaFinalAlquiler.hints.tooltip}" id="id2">
+                                <f:validator binding="#{bindings.FechaFinalAlquiler.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.FechaFinalAlquiler.format}"/>
+                            </af:inputDate>
+                            <af:inputText value="#{bindings.AccionUsuario.inputValue}"
+                                          label="#{bindings.AccionUsuario.hints.label}"
+                                          required="#{bindings.AccionUsuario.hints.mandatory}" readOnly="true"
+                                          columns="#{bindings.AccionUsuario.hints.displayWidth}"
+                                          maximumLength="#{bindings.AccionUsuario.hints.precision}"
+                                          shortDesc="#{bindings.AccionUsuario.hints.tooltip}" id="it3">
+                                <f:validator binding="#{bindings.AccionUsuario.validator}"/>
+                            </af:inputText>
+                            <af:inputDate value="#{bindings.FechaSistema.inputValue}" readOnly="true"
+                                          label="#{bindings.FechaSistema.hints.label}"
+                                          required="#{bindings.FechaSistema.hints.mandatory}"
+                                          columns="#{bindings.FechaSistema.hints.displayWidth}"
+                                          shortDesc="#{bindings.FechaSistema.hints.tooltip}" id="id3">
+                                <f:validator binding="#{bindings.FechaSistema.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.FechaSistema.format}"/>
+                            </af:inputDate>
+                            <af:inputText value="#{bindings.Descripcion.inputValue}"
+                                          label="#{bindings.Descripcion.hints.label}"
+                                          required="#{bindings.Descripcion.hints.mandatory}" readOnly="true"
+                                          columns="#{bindings.Descripcion.hints.displayWidth}"
+                                          maximumLength="#{bindings.Descripcion.hints.precision}"
+                                          shortDesc="#{bindings.Descripcion.hints.tooltip}" id="it4">
+                                <f:validator binding="#{bindings.Descripcion.validator}"/>
+                            </af:inputText>
+                            <f:facet name="footer">
+                                <af:panelGroupLayout layout="horizontal" id="pgl1">
+                                    <af:button actionListener="#{bindings.First.execute}" text="First"
+                                               disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b1"/>
+                                    <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                               disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b2"/>
+                                    <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                               disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b3"/>
+                                    <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                               disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b4"/>
+                                    <af:button text="Regresar" id="b5" action="Back"/>
+                                </af:panelGroupLayout>
+                            </f:facet>
+                        </af:panelFormLayout>
+                    </f:facet>
+                    <f:facet name="branding"/>
+                    <f:facet name="copyright"/>
+                    <f:facet name="status"/>
+                    <f:attribute name="startColumnSize" value="350"/>
+                </af:pageTemplate>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

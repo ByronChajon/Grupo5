@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="GCliente.jspx" id="d1">
+            <af:messages id="m1"/>
+            <af:form id="f1">
+                <af:pageTemplate viewId="/oracle/templates/threeColumnTemplate.jspx" id="pt1">
+                    <f:facet name="center">
+                        <af:table value="#{bindings.ClienteView1.collectionModel}" var="row"
+                                  rows="#{bindings.ClienteView1.rangeSize}"
+                                  emptyText="#{bindings.ClienteView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  rowBandingInterval="0"
+                                  selectedRowKeys="#{bindings.ClienteView1.collectionModel.selectedRow}"
+                                  selectionListener="#{bindings.ClienteView1.collectionModel.makeCurrent}"
+                                  rowSelection="single" fetchSize="#{bindings.ClienteView1.rangeSize}"
+                                  filterModel="#{bindings.ClienteView1Query.queryDescriptor}" filterVisible="true"
+                                  queryListener="#{bindings.ClienteView1Query.processQuery}" varStatus="vs" id="t1"
+                                  partialTriggers="::b1 ::b2 ::b3 ::b4 ::b10 ::b11">
+                            <af:column sortProperty="#{bindings.ClienteView1.hints.IdCliente.name}" filterable="true"
+                                       sortable="true" headerText="#{bindings.ClienteView1.hints.IdCliente.label}"
+                                       id="c1">
+                                <af:outputText value="#{row.IdCliente}"
+                                               shortDesc="#{bindings.ClienteView1.hints.IdCliente.tooltip}" id="ot1">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.ClienteView1.hints.IdCliente.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.ClienteView1.hints.NombreCliente.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.ClienteView1.hints.NombreCliente.label}" id="c2">
+                                <af:outputText value="#{row.NombreCliente}"
+                                               shortDesc="#{bindings.ClienteView1.hints.NombreCliente.tooltip}"
+                                               id="ot2"/>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.ClienteView1.hints.ApellidoCliente.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.ClienteView1.hints.ApellidoCliente.label}" id="c3">
+                                <af:outputText value="#{row.ApellidoCliente}"
+                                               shortDesc="#{bindings.ClienteView1.hints.ApellidoCliente.tooltip}"
+                                               id="ot3"/>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.ClienteView1.hints.CuiCliente.name}" filterable="true"
+                                       sortable="true" headerText="#{bindings.ClienteView1.hints.CuiCliente.label}"
+                                       id="c4">
+                                <af:outputText value="#{row.CuiCliente}"
+                                               shortDesc="#{bindings.ClienteView1.hints.CuiCliente.tooltip}" id="ot4"/>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.ClienteView1.hints.TelefonoCliente.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.ClienteView1.hints.TelefonoCliente.label}" id="c5">
+                                <af:outputText value="#{row.TelefonoCliente}"
+                                               shortDesc="#{bindings.ClienteView1.hints.TelefonoCliente.tooltip}"
+                                               id="ot5">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.ClienteView1.hints.TelefonoCliente.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.ClienteView1.hints.DireccionCliente.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.ClienteView1.hints.DireccionCliente.label}" id="c6">
+                                <af:outputText value="#{row.DireccionCliente}"
+                                               shortDesc="#{bindings.ClienteView1.hints.DireccionCliente.tooltip}"
+                                               id="ot6"/>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.ClienteView1.hints.FechaNacCliente.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.ClienteView1.hints.FechaNacCliente.label}" id="c7">
+                                <f:facet name="filter">
+                                    <af:inputDate value="#{bindings.ClienteView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.FechaNacCliente.value}"
+                                                  id="id2">
+                                        <af:convertDateTime pattern="#{bindings.ClienteView1.hints.FechaNacCliente.format}"/>
+                                    </af:inputDate>
+                                </f:facet>
+                                <af:outputText value="#{row.FechaNacCliente}"
+                                               shortDesc="#{bindings.ClienteView1.hints.FechaNacCliente.tooltip}"
+                                               id="ot7">
+                                    <af:convertDateTime pattern="#{bindings.ClienteView1.hints.FechaNacCliente.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.ClienteView1.hints.NitCliente.name}" filterable="true"
+                                       sortable="true" headerText="#{bindings.ClienteView1.hints.NitCliente.label}"
+                                       id="c8">
+                                <af:outputText value="#{row.NitCliente}"
+                                               shortDesc="#{bindings.ClienteView1.hints.NitCliente.tooltip}" id="ot8"/>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.ClienteView1.hints.CorreoCliente.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.ClienteView1.hints.CorreoCliente.label}" id="c9">
+                                <af:outputText value="#{row.CorreoCliente}"
+                                               shortDesc="#{bindings.ClienteView1.hints.CorreoCliente.tooltip}"
+                                               id="ot9"/>
+                            </af:column>
+                        </af:table>
+                    </f:facet>
+                    <f:facet name="header"/>
+                    <f:facet name="start">
+                        <af:panelFormLayout id="pfl1">
+                            <af:inputText value="#{bindings.IdCliente.inputValue}"
+                                          label="#{bindings.IdCliente.hints.label}"
+                                          required="#{bindings.IdCliente.hints.mandatory}"
+                                          columns="#{bindings.IdCliente.hints.displayWidth}"
+                                          maximumLength="#{bindings.IdCliente.hints.precision}"
+                                          shortDesc="#{bindings.IdCliente.hints.tooltip}" id="it1">
+                                <f:validator binding="#{bindings.IdCliente.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.IdCliente.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.NombreCliente.inputValue}"
+                                          label="#{bindings.NombreCliente.hints.label}"
+                                          required="#{bindings.NombreCliente.hints.mandatory}"
+                                          columns="#{bindings.NombreCliente.hints.displayWidth}"
+                                          maximumLength="#{bindings.NombreCliente.hints.precision}"
+                                          shortDesc="#{bindings.NombreCliente.hints.tooltip}" id="it2">
+                                <f:validator binding="#{bindings.NombreCliente.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.ApellidoCliente.inputValue}"
+                                          label="#{bindings.ApellidoCliente.hints.label}"
+                                          required="#{bindings.ApellidoCliente.hints.mandatory}"
+                                          columns="#{bindings.ApellidoCliente.hints.displayWidth}"
+                                          maximumLength="#{bindings.ApellidoCliente.hints.precision}"
+                                          shortDesc="#{bindings.ApellidoCliente.hints.tooltip}" id="it3">
+                                <f:validator binding="#{bindings.ApellidoCliente.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.CuiCliente.inputValue}"
+                                          label="#{bindings.CuiCliente.hints.label}"
+                                          required="#{bindings.CuiCliente.hints.mandatory}"
+                                          columns="#{bindings.CuiCliente.hints.displayWidth}"
+                                          maximumLength="#{bindings.CuiCliente.hints.precision}"
+                                          shortDesc="#{bindings.CuiCliente.hints.tooltip}" id="it4">
+                                <f:validator binding="#{bindings.CuiCliente.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.TelefonoCliente.inputValue}"
+                                          label="#{bindings.TelefonoCliente.hints.label}"
+                                          required="#{bindings.TelefonoCliente.hints.mandatory}"
+                                          columns="#{bindings.TelefonoCliente.hints.displayWidth}"
+                                          maximumLength="#{bindings.TelefonoCliente.hints.precision}"
+                                          shortDesc="#{bindings.TelefonoCliente.hints.tooltip}" id="it5">
+                                <f:validator binding="#{bindings.TelefonoCliente.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.TelefonoCliente.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.DireccionCliente.inputValue}"
+                                          label="#{bindings.DireccionCliente.hints.label}"
+                                          required="#{bindings.DireccionCliente.hints.mandatory}"
+                                          columns="#{bindings.DireccionCliente.hints.displayWidth}"
+                                          maximumLength="#{bindings.DireccionCliente.hints.precision}"
+                                          shortDesc="#{bindings.DireccionCliente.hints.tooltip}" id="it6">
+                                <f:validator binding="#{bindings.DireccionCliente.validator}"/>
+                            </af:inputText>
+                            <af:inputDate value="#{bindings.FechaNacCliente.inputValue}"
+                                          label="#{bindings.FechaNacCliente.hints.label}"
+                                          required="#{bindings.FechaNacCliente.hints.mandatory}"
+                                          columns="#{bindings.FechaNacCliente.hints.displayWidth}"
+                                          shortDesc="#{bindings.FechaNacCliente.hints.tooltip}" id="id1">
+                                <f:validator binding="#{bindings.FechaNacCliente.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.FechaNacCliente.format}"/>
+                            </af:inputDate>
+                            <af:inputText value="#{bindings.NitCliente.inputValue}"
+                                          label="#{bindings.NitCliente.hints.label}"
+                                          required="#{bindings.NitCliente.hints.mandatory}"
+                                          columns="#{bindings.NitCliente.hints.displayWidth}"
+                                          maximumLength="#{bindings.NitCliente.hints.precision}"
+                                          shortDesc="#{bindings.NitCliente.hints.tooltip}" id="it7">
+                                <f:validator binding="#{bindings.NitCliente.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.CorreoCliente.inputValue}"
+                                          label="#{bindings.CorreoCliente.hints.label}"
+                                          required="#{bindings.CorreoCliente.hints.mandatory}"
+                                          columns="#{bindings.CorreoCliente.hints.displayWidth}"
+                                          maximumLength="#{bindings.CorreoCliente.hints.precision}"
+                                          shortDesc="#{bindings.CorreoCliente.hints.tooltip}" id="it8">
+                                <f:validator binding="#{bindings.CorreoCliente.validator}"/>
+                            </af:inputText>
+                            <f:facet name="footer">
+                                <af:panelGroupLayout layout="vertical" id="pgl1">
+                                    <af:panelGroupLayout layout="horizontal" id="pgl2">
+                                        <af:button actionListener="#{bindings.First.execute}" text="Primero"
+                                                   disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b1"/>
+                                        <af:button actionListener="#{bindings.Previous.execute}" text="Anterior"
+                                                   disabled="#{!bindings.Previous.enabled}" partialSubmit="true"
+                                                   id="b2"/>
+                                        <af:button actionListener="#{bindings.Next.execute}" text="Siguiente"
+                                                   disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b3"/>
+                                        <af:button actionListener="#{bindings.Last.execute}" text="Ultimo"
+                                                   disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b4"/>
+                                        <af:button actionListener="#{bindings.Create.execute}" text="Nuevo"
+                                                   disabled="#{!bindings.Create.enabled}" id="b10"/>
+                                    </af:panelGroupLayout>
+                                    <af:button text="Agregar registro a la tabla" id="b9"/>
+                                    <af:button actionListener="#{bindings.Delete.execute}"
+                                               text="Eliminar registro de la tabla"
+                                               disabled="#{!bindings.Delete.enabled}" id="b11"/>
+                                    <af:button actionListener="#{bindings.Commit.execute}"
+                                               text="Guardar los cambios" disabled="#{!bindings.Commit.enabled}"
+                                               id="b7"/>
+                                    <af:button actionListener="#{bindings.Rollback.execute}" text="Deshacer Cambio"
+                                               disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b8">
+                                        <af:resetActionListener/>
+                                    </af:button>
+                                    <af:button text="Regresar" id="b6" action="Back"/>
+                                </af:panelGroupLayout>
+                            </f:facet>
+                        </af:panelFormLayout>
+                    </f:facet>
+                    <f:facet name="branding"/>
+                    <f:facet name="copyright"/>
+                    <f:facet name="status"/>
+                    <f:attribute name="startColumnSize" value="350"/>
+                </af:pageTemplate>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

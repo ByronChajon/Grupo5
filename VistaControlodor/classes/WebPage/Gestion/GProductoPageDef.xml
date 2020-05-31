@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="GProductoPageDef"
+                Package="WebPage.Gestion">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ProductoView1" RangeSize="25" DataControl="AppModuleDataControl" id="ProductoView1Iterator"/>
+    <searchRegion Binds="ProductoView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="ProductoView1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ProductoView1Iterator" id="IdProducto">
+      <AttrNames>
+        <Item Value="IdProducto"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductoView1Iterator" id="IdTipoProducto">
+      <AttrNames>
+        <Item Value="IdTipoProducto"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductoView1Iterator" id="LongitudFeetProducto">
+      <AttrNames>
+        <Item Value="LongitudFeetProducto"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductoView1Iterator" id="TarifaDiariaProducto">
+      <AttrNames>
+        <Item Value="TarifaDiariaProducto"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductoView1Iterator" id="StockProducto">
+      <AttrNames>
+        <Item Value="StockProducto"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ProductoView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="ProductoView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="ProductoView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="ProductoView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="ProductoView1Iterator" id="Create" RequiresUpdateModel="true" Action="createRow"/>
+    <action IterBinding="ProductoView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="ProductoView1Iterator" id="ProductoView1">
+      <nodeDefinition DefName="gt.edu.umg.modelo.ProductoView" Name="ProductoView10">
+        <AttrNames>
+          <Item Value="IdProducto"/>
+          <Item Value="IdTipoProducto"/>
+          <Item Value="LongitudFeetProducto"/>
+          <Item Value="TarifaDiariaProducto"/>
+          <Item Value="StockProducto"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

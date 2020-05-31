@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="HDetalle">
+    <page>/WebPage/VistaHistorial/HDetalle.jspx</page>
+  </view>
+  <view id="HPedido">
+    <page>/WebPage/VistaHistorial/HPedido.jspx</page>
+  </view>
+  <view id="Gestion">
+    <page>/WebPage/Gestion/Gestion.jspx</page>
+  </view>
+  <view id="GAutenticacion">
+    <page>/WebPage/Gestion/GAutenticacion.jspx</page>
+  </view>
+  <view id="GCliente">
+    <page>/WebPage/Gestion/GCliente.jspx</page>
+  </view>
+  <view id="GDetalle">
+    <page>/WebPage/Gestion/GDetalle.jspx</page>
+  </view>
+  <view id="GPedido">
+    <page>/WebPage/Gestion/GPedido.jspx</page>
+  </view>
+  <view id="GProducto">
+    <page>/WebPage/Gestion/GProducto.jspx</page>
+  </view>
+  <view id="GTipoProducto">
+    <page>/WebPage/Gestion/GTipoProducto.jspx</page>
+  </view>
+  <view id="GUsuario">
+    <page>/WebPage/Gestion/GUsuario.jspx</page>
+  </view>
+  <view id="Menu01">
+    <page>/WebPage/Menu01.jspx</page>
+  </view>
+  <view id="Vista">
+    <page>/WebPage/VistaHistorial/Vista.jspx</page>
+  </view>
+  <control-flow-rule id="__1">
+    <from-activity-id>Gestion</from-activity-id>
+    <control-flow-case id="__2">
+      <from-outcome>GAut</from-outcome>
+      <to-activity-id>GAutenticacion</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__3">
+      <from-outcome>GClie</from-outcome>
+      <to-activity-id>GCliente</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__4">
+      <from-outcome>GDet</from-outcome>
+      <to-activity-id>GDetalle</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__5">
+      <from-outcome>GPe</from-outcome>
+      <to-activity-id>GPedido</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__6">
+      <from-outcome>GPro</from-outcome>
+      <to-activity-id>GProducto</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__9">
+      <from-outcome>GUs</from-outcome>
+      <to-activity-id>GUsuario</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__10">
+      <from-outcome>GTP</from-outcome>
+      <to-activity-id>GTipoProducto</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__33">
+      <from-outcome>Home</from-outcome>
+      <to-activity-id>Menu01</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__11">
+    <from-activity-id>GAutenticacion</from-activity-id>
+    <control-flow-case id="__12">
+      <from-outcome>Back</from-outcome>
+      <to-activity-id>Gestion</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__13">
+    <from-activity-id>GCliente</from-activity-id>
+    <control-flow-case id="__14">
+      <from-outcome>Back</from-outcome>
+      <to-activity-id>Gestion</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__15">
+    <from-activity-id>GDetalle</from-activity-id>
+    <control-flow-case id="__16">
+      <from-outcome>Back</from-outcome>
+      <to-activity-id>Gestion</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__17">
+    <from-activity-id>GPedido</from-activity-id>
+    <control-flow-case id="__18">
+      <from-outcome>Back</from-outcome>
+      <to-activity-id>Gestion</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__19">
+    <from-activity-id>GProducto</from-activity-id>
+    <control-flow-case id="__20">
+      <from-outcome>Back</from-outcome>
+      <to-activity-id>Gestion</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__21">
+    <from-activity-id>GUsuario</from-activity-id>
+    <control-flow-case id="__22">
+      <from-outcome>Back</from-outcome>
+      <to-activity-id>Gestion</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__23">
+    <from-activity-id>GTipoProducto</from-activity-id>
+    <control-flow-case id="__24">
+      <from-outcome>Back</from-outcome>
+      <to-activity-id>Gestion</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__25">
+    <from-activity-id>Menu01</from-activity-id>
+    <control-flow-case id="__26">
+      <from-outcome>Gestion</from-outcome>
+      <to-activity-id>Gestion</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__27">
+      <from-outcome>Vista</from-outcome>
+      <to-activity-id>Vista</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__28">
+    <from-activity-id>Vista</from-activity-id>
+    <control-flow-case id="__29">
+      <from-outcome>VPe</from-outcome>
+      <to-activity-id>HPedido</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__30">
+      <from-outcome>VDet</from-outcome>
+      <to-activity-id>HDetalle</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__34">
+      <from-outcome>Home</from-outcome>
+      <to-activity-id>Menu01</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__7">
+    <from-activity-id>HPedido</from-activity-id>
+    <control-flow-case id="__8">
+      <from-outcome>Back</from-outcome>
+      <to-activity-id>Vista</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__31">
+    <from-activity-id>HDetalle</from-activity-id>
+    <control-flow-case id="__32">
+      <from-outcome>Back</from-outcome>
+      <to-activity-id>Vista</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+</adfc-config>

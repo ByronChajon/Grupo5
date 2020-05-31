@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="HPedido.jspx" id="d1">
+            <af:messages id="m1"/>
+            <af:form id="f1">
+                <af:pageTemplate viewId="/oracle/templates/threeColumnTemplate.jspx" id="pt1">
+                    <f:facet name="center">
+                        <af:table value="#{bindings.HistorialPedidoView1.collectionModel}" var="row"
+                                  rows="#{bindings.HistorialPedidoView1.rangeSize}"
+                                  emptyText="#{bindings.HistorialPedidoView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  rowBandingInterval="0"
+                                  selectedRowKeys="#{bindings.HistorialPedidoView1.collectionModel.selectedRow}"
+                                  selectionListener="#{bindings.HistorialPedidoView1.collectionModel.makeCurrent}"
+                                  rowSelection="single" fetchSize="#{bindings.HistorialPedidoView1.rangeSize}"
+                                  filterModel="#{bindings.HistorialPedidoView1Query.queryDescriptor}"
+                                  filterVisible="true"
+                                  queryListener="#{bindings.HistorialPedidoView1Query.processQuery}" varStatus="vs"
+                                  id="t1" partialTriggers="::b1 ::b2 ::b3 ::b4">
+                            <af:column sortProperty="#{bindings.HistorialPedidoView1.hints.IdPedido.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.HistorialPedidoView1.hints.IdPedido.label}" id="c1">
+                                <af:outputText value="#{row.IdPedido}"
+                                               shortDesc="#{bindings.HistorialPedidoView1.hints.IdPedido.tooltip}"
+                                               id="ot1">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.HistorialPedidoView1.hints.IdPedido.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.HistorialPedidoView1.hints.AccionUsuario.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.HistorialPedidoView1.hints.AccionUsuario.label}" id="c2">
+                                <af:outputText value="#{row.AccionUsuario}"
+                                               shortDesc="#{bindings.HistorialPedidoView1.hints.AccionUsuario.tooltip}"
+                                               id="ot2"/>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.HistorialPedidoView1.hints.EstadoPedido.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.HistorialPedidoView1.hints.EstadoPedido.label}" id="c3">
+                                <af:outputText value="#{row.EstadoPedido}"
+                                               shortDesc="#{bindings.HistorialPedidoView1.hints.EstadoPedido.tooltip}"
+                                               id="ot3"/>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.HistorialPedidoView1.hints.FechaSistema.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.HistorialPedidoView1.hints.FechaSistema.label}" id="c4">
+                                <f:facet name="filter">
+                                    <af:inputDate value="#{bindings.HistorialPedidoView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.FechaSistema.value}"
+                                                  id="id2">
+                                        <af:convertDateTime pattern="#{bindings.HistorialPedidoView1.hints.FechaSistema.format}"/>
+                                    </af:inputDate>
+                                </f:facet>
+                                <af:outputText value="#{row.FechaSistema}"
+                                               shortDesc="#{bindings.HistorialPedidoView1.hints.FechaSistema.tooltip}"
+                                               id="ot4">
+                                    <af:convertDateTime pattern="#{bindings.HistorialPedidoView1.hints.FechaSistema.format}"/>
+                                </af:outputText>
+                            </af:column>
+                        </af:table>
+                    </f:facet>
+                    <f:facet name="header"/>
+                    <f:facet name="start">
+                        <af:panelFormLayout id="pfl1">
+                            <af:inputText value="#{bindings.IdPedido.inputValue}"
+                                          label="#{bindings.IdPedido.hints.label}"
+                                          required="#{bindings.IdPedido.hints.mandatory}" readOnly="true"
+                                          columns="#{bindings.IdPedido.hints.displayWidth}"
+                                          maximumLength="#{bindings.IdPedido.hints.precision}"
+                                          shortDesc="#{bindings.IdPedido.hints.tooltip}" id="it1">
+                                <f:validator binding="#{bindings.IdPedido.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.IdPedido.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.AccionUsuario.inputValue}"
+                                          label="#{bindings.AccionUsuario.hints.label}"
+                                          required="#{bindings.AccionUsuario.hints.mandatory}" readOnly="true"
+                                          columns="#{bindings.AccionUsuario.hints.displayWidth}"
+                                          maximumLength="#{bindings.AccionUsuario.hints.precision}"
+                                          shortDesc="#{bindings.AccionUsuario.hints.tooltip}" id="it2">
+                                <f:validator binding="#{bindings.AccionUsuario.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.EstadoPedido.inputValue}"
+                                          label="#{bindings.EstadoPedido.hints.label}"
+                                          required="#{bindings.EstadoPedido.hints.mandatory}" readOnly="true"
+                                          columns="#{bindings.EstadoPedido.hints.displayWidth}"
+                                          maximumLength="#{bindings.EstadoPedido.hints.precision}"
+                                          shortDesc="#{bindings.EstadoPedido.hints.tooltip}" id="it3">
+                                <f:validator binding="#{bindings.EstadoPedido.validator}"/>
+                            </af:inputText>
+                            <af:inputDate value="#{bindings.FechaSistema.inputValue}" readOnly="true"
+                                          label="#{bindings.FechaSistema.hints.label}"
+                                          required="#{bindings.FechaSistema.hints.mandatory}"
+                                          columns="#{bindings.FechaSistema.hints.displayWidth}"
+                                          shortDesc="#{bindings.FechaSistema.hints.tooltip}" id="id1">
+                                <f:validator binding="#{bindings.FechaSistema.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.FechaSistema.format}"/>
+                            </af:inputDate>
+                            <f:facet name="footer">
+                                <af:panelGroupLayout layout="horizontal" id="pgl1">
+                                    <af:button actionListener="#{bindings.First.execute}" text="First"
+                                               disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b1"/>
+                                    <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                               disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b2"/>
+                                    <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                               disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b3"/>
+                                    <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                               disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b4"/>
+                                    <af:button text="Regresar" id="b5" action="Back"/>
+                                </af:panelGroupLayout>
+                            </f:facet>
+                        </af:panelFormLayout>
+                    </f:facet>
+                    <f:facet name="branding"/>
+                    <f:facet name="copyright"/>
+                    <f:facet name="status"/>
+                    <f:attribute name="startColumnSize" value="350"/>
+                </af:pageTemplate>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="GAutenticacionPageDef"
+                Package="WebPage.Gestion">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="AutenticacionView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="AutenticacionView1Iterator"/>
+    <searchRegion Binds="AutenticacionView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="AutenticacionView1Query"/>
+  </executables>
+  <bindings>
+    <action IterBinding="AutenticacionView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="AutenticacionView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="AutenticacionView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="AutenticacionView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <attributeValues IterBinding="AutenticacionView1Iterator" id="NombreeUsuario">
+      <AttrNames>
+        <Item Value="NombreeUsuario"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AutenticacionView1Iterator" id="ContraUsuario">
+      <AttrNames>
+        <Item Value="ContraUsuario"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="AutenticacionView1Iterator" id="Create" RequiresUpdateModel="true" Action="createRow"/>
+    <action IterBinding="AutenticacionView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="AutenticacionView1Iterator" id="AutenticacionView1">
+      <nodeDefinition DefName="gt.edu.umg.modelo.AutenticacionView" Name="AutenticacionView10">
+        <AttrNames>
+          <Item Value="NombreeUsuario"/>
+          <Item Value="ContraUsuario"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

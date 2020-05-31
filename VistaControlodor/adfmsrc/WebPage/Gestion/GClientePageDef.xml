@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="GClientePageDef"
+                Package="WebPage.Gestion">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ClienteView1" RangeSize="25" DataControl="AppModuleDataControl" id="ClienteView1Iterator"/>
+    <searchRegion Binds="ClienteView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="ClienteView1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ClienteView1Iterator" id="IdCliente">
+      <AttrNames>
+        <Item Value="IdCliente"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClienteView1Iterator" id="NombreCliente">
+      <AttrNames>
+        <Item Value="NombreCliente"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClienteView1Iterator" id="ApellidoCliente">
+      <AttrNames>
+        <Item Value="ApellidoCliente"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClienteView1Iterator" id="CuiCliente">
+      <AttrNames>
+        <Item Value="CuiCliente"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClienteView1Iterator" id="TelefonoCliente">
+      <AttrNames>
+        <Item Value="TelefonoCliente"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClienteView1Iterator" id="DireccionCliente">
+      <AttrNames>
+        <Item Value="DireccionCliente"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClienteView1Iterator" id="FechaNacCliente">
+      <AttrNames>
+        <Item Value="FechaNacCliente"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClienteView1Iterator" id="NitCliente">
+      <AttrNames>
+        <Item Value="NitCliente"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClienteView1Iterator" id="CorreoCliente">
+      <AttrNames>
+        <Item Value="CorreoCliente"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ClienteView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="ClienteView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="ClienteView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="ClienteView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="ClienteView1Iterator" id="Create" RequiresUpdateModel="true" Action="createRow"/>
+    <action IterBinding="ClienteView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="ClienteView1Iterator" id="ClienteView1">
+      <nodeDefinition DefName="gt.edu.umg.modelo.ClienteView" Name="ClienteView10">
+        <AttrNames>
+          <Item Value="IdCliente"/>
+          <Item Value="NombreCliente"/>
+          <Item Value="ApellidoCliente"/>
+          <Item Value="CuiCliente"/>
+          <Item Value="TelefonoCliente"/>
+          <Item Value="DireccionCliente"/>
+          <Item Value="FechaNacCliente"/>
+          <Item Value="NitCliente"/>
+          <Item Value="CorreoCliente"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

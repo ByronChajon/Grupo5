@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Autenticacion"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="AUTENTICACION"
+  AliasName="Autenticacion"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="NombreeUsuario"
+    Precision="15"
+    ColumnName="NOMBREE_USUARIO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="AUTENTICACION"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ContraUsuario"
+    Precision="20"
+    ColumnName="CONTRA_USUARIO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="AUTENTICACION"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="AutenticacionPrimaryKey"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="AUTENTICACION_PRIMARY_KEY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="gt.edu.umg.modelo.Autenticacion.NombreeUsuario"/>
+      <Item Value="gt.edu.umg.modelo.Autenticacion.ContraUsuario"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="CkContraUsu">
+    <DesignTime>
+      <Attr Name="_checkCondition"
+        Value="REGEXP_LIKE(Contra_Usuario,'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@¡!%*¿?&amp;-+\^#])([A-Za-z\d$@¡!%*¿?&amp;-+\^#]|[^ ]){8,12}$')"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="CK_CONTRA_USU"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="CkNomUsu">
+    <DesignTime>
+      <Attr Name="_checkCondition" Value="REGEXP_LIKE(Nombree_Usuario,'^[[:alnum:]]{4,8}$')"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="CK_NOM_USU"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+</Entity>

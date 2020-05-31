@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Pedido"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="PEDIDO"
+  AliasName="Pedido"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="IdPedido"
+    IsNotNull="true"
+    ColumnName="ID_PEDIDO"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="PEDIDO"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="IdCliente"
+    IsNotNull="true"
+    ColumnName="ID_CLIENTE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="PEDIDO"/>
+  <Attribute
+    Name="FechaPedido"
+    IsNotNull="true"
+    ColumnName="FECHA_PEDIDO"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="PEDIDO"/>
+  <Attribute
+    Name="EstadoPedido"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="ESTADO_PEDIDO"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="PEDIDO"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Cliente"
+    Association="gt.edu.umg.modelo.FkPedidoClienteAssoc"
+    AssociationEnd="gt.edu.umg.modelo.FkPedidoClienteAssoc.Cliente"
+    AssociationOtherEnd="gt.edu.umg.modelo.FkPedidoClienteAssoc.Pedido"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="ChkPedido">
+    <DesignTime>
+      <Attr Name="_checkCondition" Value="Id_Pedido > 0"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="CHK_PEDIDO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="PkPedido"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_PEDIDO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="gt.edu.umg.modelo.Pedido.IdPedido"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkPedidoCliente">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_CLIENTE"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_PEDIDO_CLIENTE"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="gt.edu.umg.modelo.Pedido.IdCliente"/>
+    </AttrArray>
+  </Key>
+</Entity>

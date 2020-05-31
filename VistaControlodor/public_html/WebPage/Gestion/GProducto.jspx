@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="GProducto.jspx" id="d1">
+            <af:messages id="m1"/>
+            <af:form id="f1">
+                <af:pageTemplate viewId="/oracle/templates/threeColumnTemplate.jspx" id="pt1">
+                    <f:facet name="center">
+                        <af:table value="#{bindings.ProductoView1.collectionModel}" var="row"
+                                  rows="#{bindings.ProductoView1.rangeSize}"
+                                  emptyText="#{bindings.ProductoView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  rowBandingInterval="0"
+                                  selectedRowKeys="#{bindings.ProductoView1.collectionModel.selectedRow}"
+                                  selectionListener="#{bindings.ProductoView1.collectionModel.makeCurrent}"
+                                  rowSelection="single" fetchSize="#{bindings.ProductoView1.rangeSize}"
+                                  filterModel="#{bindings.ProductoView1Query.queryDescriptor}" filterVisible="true"
+                                  queryListener="#{bindings.ProductoView1Query.processQuery}" varStatus="vs" id="t1"
+                                  partialTriggers="::b1 ::b2 ::b3 ::b4 ::b7 ::b8">
+                            <af:column sortProperty="#{bindings.ProductoView1.hints.IdProducto.name}" filterable="true"
+                                       sortable="true" headerText="#{bindings.ProductoView1.hints.IdProducto.label}"
+                                       id="c1">
+                                <af:outputText value="#{row.IdProducto}"
+                                               shortDesc="#{bindings.ProductoView1.hints.IdProducto.tooltip}" id="ot1">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.ProductoView1.hints.IdProducto.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.ProductoView1.hints.IdTipoProducto.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.ProductoView1.hints.IdTipoProducto.label}" id="c2">
+                                <af:outputText value="#{row.IdTipoProducto}"
+                                               shortDesc="#{bindings.ProductoView1.hints.IdTipoProducto.tooltip}"
+                                               id="ot2">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.ProductoView1.hints.IdTipoProducto.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.ProductoView1.hints.LongitudFeetProducto.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.ProductoView1.hints.LongitudFeetProducto.label}" id="c3">
+                                <af:outputText value="#{row.LongitudFeetProducto}"
+                                               shortDesc="#{bindings.ProductoView1.hints.LongitudFeetProducto.tooltip}"
+                                               id="ot3"/>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.ProductoView1.hints.TarifaDiariaProducto.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.ProductoView1.hints.TarifaDiariaProducto.label}" id="c4">
+                                <af:outputText value="#{row.TarifaDiariaProducto}"
+                                               shortDesc="#{bindings.ProductoView1.hints.TarifaDiariaProducto.tooltip}"
+                                               id="ot4">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.ProductoView1.hints.TarifaDiariaProducto.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.ProductoView1.hints.StockProducto.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.ProductoView1.hints.StockProducto.label}" id="c5">
+                                <af:outputText value="#{row.StockProducto}"
+                                               shortDesc="#{bindings.ProductoView1.hints.StockProducto.tooltip}"
+                                               id="ot5">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.ProductoView1.hints.StockProducto.format}"/>
+                                </af:outputText>
+                            </af:column>
+                        </af:table>
+                    </f:facet>
+                    <f:facet name="header"/>
+                    <f:facet name="start">
+                        <af:panelFormLayout id="pfl1">
+                            <af:inputText value="#{bindings.IdProducto.inputValue}"
+                                          label="#{bindings.IdProducto.hints.label}"
+                                          required="#{bindings.IdProducto.hints.mandatory}"
+                                          columns="#{bindings.IdProducto.hints.displayWidth}"
+                                          maximumLength="#{bindings.IdProducto.hints.precision}"
+                                          shortDesc="#{bindings.IdProducto.hints.tooltip}" id="it1">
+                                <f:validator binding="#{bindings.IdProducto.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.IdProducto.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.IdTipoProducto.inputValue}"
+                                          label="#{bindings.IdTipoProducto.hints.label}"
+                                          required="#{bindings.IdTipoProducto.hints.mandatory}"
+                                          columns="#{bindings.IdTipoProducto.hints.displayWidth}"
+                                          maximumLength="#{bindings.IdTipoProducto.hints.precision}"
+                                          shortDesc="#{bindings.IdTipoProducto.hints.tooltip}" id="it2">
+                                <f:validator binding="#{bindings.IdTipoProducto.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.IdTipoProducto.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.LongitudFeetProducto.inputValue}"
+                                          label="#{bindings.LongitudFeetProducto.hints.label}"
+                                          required="#{bindings.LongitudFeetProducto.hints.mandatory}"
+                                          columns="#{bindings.LongitudFeetProducto.hints.displayWidth}"
+                                          maximumLength="#{bindings.LongitudFeetProducto.hints.precision}"
+                                          shortDesc="#{bindings.LongitudFeetProducto.hints.tooltip}" id="it3">
+                                <f:validator binding="#{bindings.LongitudFeetProducto.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.TarifaDiariaProducto.inputValue}"
+                                          label="#{bindings.TarifaDiariaProducto.hints.label}"
+                                          required="#{bindings.TarifaDiariaProducto.hints.mandatory}"
+                                          columns="#{bindings.TarifaDiariaProducto.hints.displayWidth}"
+                                          maximumLength="#{bindings.TarifaDiariaProducto.hints.precision}"
+                                          shortDesc="#{bindings.TarifaDiariaProducto.hints.tooltip}" id="it4">
+                                <f:validator binding="#{bindings.TarifaDiariaProducto.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TarifaDiariaProducto.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.StockProducto.inputValue}"
+                                          label="#{bindings.StockProducto.hints.label}"
+                                          required="#{bindings.StockProducto.hints.mandatory}"
+                                          columns="#{bindings.StockProducto.hints.displayWidth}"
+                                          maximumLength="#{bindings.StockProducto.hints.precision}"
+                                          shortDesc="#{bindings.StockProducto.hints.tooltip}" id="it5">
+                                <f:validator binding="#{bindings.StockProducto.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.StockProducto.format}"/>
+                            </af:inputText>
+                            <f:facet name="footer">
+                                <af:panelGroupLayout layout="vertical" id="pgl1">
+                                    <af:panelGroupLayout layout="horizontal" id="pgl2">
+                                        <af:button actionListener="#{bindings.First.execute}" text="Primero"
+                                                   disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b1"/>
+                                        <af:button actionListener="#{bindings.Previous.execute}" text="Anterior"
+                                                   disabled="#{!bindings.Previous.enabled}" partialSubmit="true"
+                                                   id="b2"/>
+                                        <af:button actionListener="#{bindings.Next.execute}" text="Siguiente"
+                                                   disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b3"/>
+                                        <af:button actionListener="#{bindings.Last.execute}" text="Ultimo"
+                                                   disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b4"/>
+                                        <af:button actionListener="#{bindings.Create.execute}" text="Nuevo"
+                                                   disabled="#{!bindings.Create.enabled}" id="b7"/>
+                                    </af:panelGroupLayout>
+                                    <af:button text="Agregar registro a la tabla" id="b5"/>
+                                    <af:button actionListener="#{bindings.Delete.execute}"
+                                               text="Eliminar registro de la tabla"
+                                               disabled="#{!bindings.Delete.enabled}" id="b8"/>
+                                    <af:button actionListener="#{bindings.Commit.execute}" text="Guardar cambios"
+                                               disabled="#{!bindings.Commit.enabled}" id="b10"/>
+                                    <af:button actionListener="#{bindings.Rollback.execute}" text="Deshacer cambio"
+                                               disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b11">
+                                        <af:resetActionListener/>
+                                    </af:button>
+                                    <af:button text="Regresar" id="b6" action="Back"/>
+                                </af:panelGroupLayout>
+                            </f:facet>
+                        </af:panelFormLayout>
+                    </f:facet>
+                    <f:facet name="branding"/>
+                    <f:facet name="copyright"/>
+                    <f:facet name="status"/>
+                    <f:attribute name="startColumnSize" value="350"/>
+                </af:pageTemplate>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

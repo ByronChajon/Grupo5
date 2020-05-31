@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.22.48" id="DataBindings"
+             SeparateXMLFiles="false" Package="gt.edu.umg.vista" ClientType="Generic">
+  <pageMap>
+    <page path="/WebPage/Menu01.jspx" usageId="gt_edu_umg_vista_Menu01PageDef"/>
+    <page path="/WebPage/Gestion/Gestion.jspx" usageId="gt_edu_umg_vista_GestionPageDef"/>
+    <page path="/WebPage/VistaHistorial/Vista.jspx" usageId="gt_edu_umg_vista_VistaPageDef"/>
+    <page path="/WebPage/VistaHistorial/HPedido.jspx" usageId="gt_edu_umg_vista_HPedidoPageDef"/>
+    <page path="/WebPage/VistaHistorial/HDetalle.jspx" usageId="gt_edu_umg_vista_HDetallePageDef"/>
+    <page path="/WebPage/Gestion/GAutenticacion.jspx" usageId="gt_edu_umg_vista_GAutenticacionPageDef"/>
+    <page path="/WebPage/Gestion/GCliente.jspx" usageId="gt_edu_umg_vista_GClientePageDef"/>
+    <page path="/WebPage/Gestion/GDetalle.jspx" usageId="gt_edu_umg_vista_GDetallePageDef"/>
+    <page path="/WebPage/Gestion/GPedido.jspx" usageId="gt_edu_umg_vista_GPedidoPageDef"/>
+    <page path="/WebPage/Gestion/GProducto.jspx" usageId="gt_edu_umg_vista_GProductoPageDef"/>
+    <page path="/WebPage/Gestion/GTipoProducto.jspx" usageId="gt_edu_umg_vista_GTipoProductoPageDef"/>
+    <page path="/WebPage/Gestion/GUsuario.jspx" usageId="gt_edu_umg_vista_GUsuarioPageDef"/>
+    <page path="/WebPage/Cotizacion/Cotizacion01.jspx" usageId="gt_edu_umg_vista_Cotizacion01PageDef"/>
+    <page path="/WebPage/Cotizacion/templateDef1.jspx" usageId="gt_edu_umg_vista_templateDef1PageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="gt_edu_umg_vista_Menu01PageDef" path="WebPage.Menu01PageDef"/>
+    <page id="gt_edu_umg_vista_GestionPageDef" path="WebPage.Gestion.GestionPageDef"/>
+    <page id="gt_edu_umg_vista_VistaPageDef" path="WebPage.VistaHistorial.VistaPageDef"/>
+    <page id="gt_edu_umg_vista_HPedidoPageDef" path="WebPage.VistaHistorial.HPedidoPageDef"/>
+    <page id="gt_edu_umg_vista_HDetallePageDef" path="WebPage.VistaHistorial.HDetallePageDef"/>
+    <page id="gt_edu_umg_vista_GAutenticacionPageDef" path="WebPage.Gestion.GAutenticacionPageDef"/>
+    <page id="gt_edu_umg_vista_GClientePageDef" path="WebPage.Gestion.GClientePageDef"/>
+    <page id="gt_edu_umg_vista_GDetallePageDef" path="WebPage.Gestion.GDetallePageDef"/>
+    <page id="gt_edu_umg_vista_GPedidoPageDef" path="WebPage.Gestion.GPedidoPageDef"/>
+    <page id="gt_edu_umg_vista_GProductoPageDef" path="WebPage.Gestion.GProductoPageDef"/>
+    <page id="gt_edu_umg_vista_GTipoProductoPageDef" path="WebPage.Gestion.GTipoProductoPageDef"/>
+    <page id="gt_edu_umg_vista_GUsuarioPageDef" path="WebPage.Gestion.GUsuarioPageDef"/>
+    <page id="gt_edu_umg_vista_Cotizacion01PageDef" path="WebPage.Cotizacion.Cotizacion01PageDef"/>
+    <page id="gt_edu_umg_vista_templateDef1PageDef" path="WebPage.Cotizacion.templateDef1PageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="gt.edu.umg.modelo"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

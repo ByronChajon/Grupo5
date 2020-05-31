@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="GPedido.jspx" id="d1">
+            <af:messages id="m1"/>
+            <af:form id="f1">
+                <af:pageTemplate viewId="/oracle/templates/threeColumnTemplate.jspx" id="pt1">
+                    <f:facet name="center">
+                        <af:table value="#{bindings.PedidoView1.collectionModel}" var="row"
+                                  rows="#{bindings.PedidoView1.rangeSize}"
+                                  emptyText="#{bindings.PedidoView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  rowBandingInterval="0"
+                                  selectedRowKeys="#{bindings.PedidoView1.collectionModel.selectedRow}"
+                                  selectionListener="#{bindings.PedidoView1.collectionModel.makeCurrent}"
+                                  rowSelection="single" fetchSize="#{bindings.PedidoView1.rangeSize}"
+                                  filterModel="#{bindings.PedidoView1Query.queryDescriptor}" filterVisible="true"
+                                  queryListener="#{bindings.PedidoView1Query.processQuery}" varStatus="vs" id="t1"
+                                  partialTriggers="::b1 ::b2 ::b3 ::b4 ::b7 ::b8">
+                            <af:column sortProperty="#{bindings.PedidoView1.hints.IdPedido.name}" filterable="true"
+                                       sortable="true" headerText="#{bindings.PedidoView1.hints.IdPedido.label}"
+                                       id="c1">
+                                <af:outputText value="#{row.IdPedido}"
+                                               shortDesc="#{bindings.PedidoView1.hints.IdPedido.tooltip}" id="ot1">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.PedidoView1.hints.IdPedido.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.PedidoView1.hints.IdCliente.name}" filterable="true"
+                                       sortable="true" headerText="#{bindings.PedidoView1.hints.IdCliente.label}"
+                                       id="c2">
+                                <af:outputText value="#{row.IdCliente}"
+                                               shortDesc="#{bindings.PedidoView1.hints.IdCliente.tooltip}" id="ot2">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.PedidoView1.hints.IdCliente.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.PedidoView1.hints.FechaPedido.name}" filterable="true"
+                                       sortable="true" headerText="#{bindings.PedidoView1.hints.FechaPedido.label}"
+                                       id="c3">
+                                <f:facet name="filter">
+                                    <af:inputDate value="#{bindings.PedidoView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.FechaPedido.value}"
+                                                  id="id1">
+                                        <af:convertDateTime pattern="#{bindings.PedidoView1.hints.FechaPedido.format}"/>
+                                    </af:inputDate>
+                                </f:facet>
+                                <af:outputText value="#{row.FechaPedido}"
+                                               shortDesc="#{bindings.PedidoView1.hints.FechaPedido.tooltip}" id="ot3">
+                                    <af:convertDateTime pattern="#{bindings.PedidoView1.hints.FechaPedido.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.PedidoView1.hints.EstadoPedido.name}" filterable="true"
+                                       sortable="true" headerText="#{bindings.PedidoView1.hints.EstadoPedido.label}"
+                                       id="c4">
+                                <af:outputText value="#{row.EstadoPedido}"
+                                               shortDesc="#{bindings.PedidoView1.hints.EstadoPedido.tooltip}" id="ot4"/>
+                            </af:column>
+                        </af:table>
+                    </f:facet>
+                    <f:facet name="header"/>
+                    <f:facet name="start">
+                        <af:panelFormLayout id="pfl1">
+                            <af:inputText value="#{bindings.IdPedido.inputValue}"
+                                          label="#{bindings.IdPedido.hints.label}"
+                                          required="#{bindings.IdPedido.hints.mandatory}"
+                                          columns="#{bindings.IdPedido.hints.displayWidth}"
+                                          maximumLength="#{bindings.IdPedido.hints.precision}"
+                                          shortDesc="#{bindings.IdPedido.hints.tooltip}" id="it1">
+                                <f:validator binding="#{bindings.IdPedido.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.IdPedido.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.IdCliente.inputValue}"
+                                          label="#{bindings.IdCliente.hints.label}"
+                                          required="#{bindings.IdCliente.hints.mandatory}"
+                                          columns="#{bindings.IdCliente.hints.displayWidth}"
+                                          maximumLength="#{bindings.IdCliente.hints.precision}"
+                                          shortDesc="#{bindings.IdCliente.hints.tooltip}" id="it2">
+                                <f:validator binding="#{bindings.IdCliente.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.IdCliente.format}"/>
+                            </af:inputText>
+                            <af:inputDate value="#{bindings.FechaPedido.inputValue}"
+                                          label="#{bindings.FechaPedido.hints.label}"
+                                          required="#{bindings.FechaPedido.hints.mandatory}"
+                                          columns="#{bindings.FechaPedido.hints.displayWidth}"
+                                          shortDesc="#{bindings.FechaPedido.hints.tooltip}" id="id2">
+                                <f:validator binding="#{bindings.FechaPedido.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.FechaPedido.format}"/>
+                            </af:inputDate>
+                            <af:inputText value="#{bindings.EstadoPedido.inputValue}"
+                                          label="#{bindings.EstadoPedido.hints.label}"
+                                          required="#{bindings.EstadoPedido.hints.mandatory}"
+                                          columns="#{bindings.EstadoPedido.hints.displayWidth}"
+                                          maximumLength="#{bindings.EstadoPedido.hints.precision}"
+                                          shortDesc="#{bindings.EstadoPedido.hints.tooltip}" id="it3">
+                                <f:validator binding="#{bindings.EstadoPedido.validator}"/>
+                            </af:inputText>
+                            <f:facet name="footer">
+                                <af:panelGroupLayout layout="vertical" id="pgl1">
+                                    <af:panelGroupLayout layout="horizontal" id="pgl2">
+                                        <af:button actionListener="#{bindings.First.execute}" text="Primero"
+                                                   disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b1"/>
+                                        <af:button actionListener="#{bindings.Previous.execute}" text="Anterior"
+                                                   disabled="#{!bindings.Previous.enabled}" partialSubmit="true"
+                                                   id="b2"/>
+                                        <af:button actionListener="#{bindings.Next.execute}" text="Siguiente"
+                                                   disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b3"/>
+                                        <af:button actionListener="#{bindings.Last.execute}" text="Ultimo"
+                                                   disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b4"/>
+                                        <af:button actionListener="#{bindings.Create.execute}" text="Nuevo"
+                                                   disabled="#{!bindings.Create.enabled}" id="b7"/>
+                                    </af:panelGroupLayout>
+                                    <af:button text="Agregar registro a la tabla" id="b5"/>
+                                    <af:button actionListener="#{bindings.Delete.execute}"
+                                               text="Eliminar registro de la tabla"
+                                               disabled="#{!bindings.Delete.enabled}" id="b8"/>
+                                    <af:button actionListener="#{bindings.Commit.execute}" text="Guardar cambios"
+                                               disabled="#{!bindings.Commit.enabled}" id="b10"/>
+                                    <af:button actionListener="#{bindings.Rollback.execute}" text="Deshacer cambio"
+                                               disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b11">
+                                        <af:resetActionListener/>
+                                    </af:button>
+                                    <af:button text="Regresar" id="b6" action="Back"/>
+                                </af:panelGroupLayout>
+                            </f:facet>
+                        </af:panelFormLayout>
+                    </f:facet>
+                    <f:facet name="branding"/>
+                    <f:facet name="copyright"/>
+                    <f:facet name="status"/>
+                    <f:attribute name="startColumnSize" value="350"/>
+                </af:pageTemplate>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

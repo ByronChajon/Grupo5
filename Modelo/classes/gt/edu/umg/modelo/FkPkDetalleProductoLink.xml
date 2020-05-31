@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkPkDetalleProductoLink"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  EntityAssociation="gt.edu.umg.modelo.FkPkDetalleProductoAssoc">
+  <ViewLinkDefEnd
+    Name="ProductoView"
+    Cardinality="1"
+    Source="true"
+    Owner="gt.edu.umg.modelo.ProductoView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="ProductoView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="gt.edu.umg.modelo.ProductoView.IdProducto"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="DetalleView"
+    Cardinality="-1"
+    Owner="gt.edu.umg.modelo.DetalleView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="DetalleView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="gt.edu.umg.modelo.DetalleView.IdProducto"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="GPedidoPageDef"
+                Package="WebPage.Gestion">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PedidoView1" RangeSize="25" DataControl="AppModuleDataControl" id="PedidoView1Iterator"/>
+    <searchRegion Binds="PedidoView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="PedidoView1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="PedidoView1Iterator" id="IdPedido">
+      <AttrNames>
+        <Item Value="IdPedido"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PedidoView1Iterator" id="IdCliente">
+      <AttrNames>
+        <Item Value="IdCliente"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PedidoView1Iterator" id="FechaPedido">
+      <AttrNames>
+        <Item Value="FechaPedido"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PedidoView1Iterator" id="EstadoPedido">
+      <AttrNames>
+        <Item Value="EstadoPedido"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="PedidoView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="PedidoView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="PedidoView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="PedidoView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="PedidoView1Iterator" id="Create" RequiresUpdateModel="true" Action="createRow"/>
+    <action IterBinding="PedidoView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="PedidoView1Iterator" id="PedidoView1">
+      <nodeDefinition DefName="gt.edu.umg.modelo.PedidoView" Name="PedidoView10">
+        <AttrNames>
+          <Item Value="IdPedido"/>
+          <Item Value="IdCliente"/>
+          <Item Value="FechaPedido"/>
+          <Item Value="EstadoPedido"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

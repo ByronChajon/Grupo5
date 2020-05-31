@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="UsuarioView"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="Usuario"
+    Entity="gt.edu.umg.modelo.Usuario"/>
+  <ViewAttribute
+    Name="IdUsuario"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="IdUsuario"
+    EntityUsage="Usuario"
+    AliasName="ID_USUARIO"/>
+  <ViewAttribute
+    Name="NombreUsuario"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="NombreUsuario"
+    EntityUsage="Usuario"
+    AliasName="NOMBRE_USUARIO"/>
+  <ViewAttribute
+    Name="CorreoUsuario"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CorreoUsuario"
+    EntityUsage="Usuario"
+    AliasName="CORREO_USUARIO"/>
+  <ViewAttribute
+    Name="ContrasenaUsuario"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ContrasenaUsuario"
+    EntityUsage="Usuario"
+    AliasName="CONTRASENA_USUARIO"/>
+  <ViewAttribute
+    Name="CuiUsuario"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CuiUsuario"
+    EntityUsage="Usuario"
+    AliasName="CUI_USUARIO"/>
+</ViewObject>

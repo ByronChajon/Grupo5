@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="HDetallePageDef"
+                Package="WebPage.VistaHistorial">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="HistorialDetalleView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="HistorialDetalleView1Iterator"/>
+    <searchRegion Binds="HistorialDetalleView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="HistorialDetalleView1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="HistorialDetalleView1Iterator" id="IdDetalle">
+      <AttrNames>
+        <Item Value="IdDetalle"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HistorialDetalleView1Iterator" id="CantidadProducto">
+      <AttrNames>
+        <Item Value="CantidadProducto"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HistorialDetalleView1Iterator" id="FechaInicioAlquiler">
+      <AttrNames>
+        <Item Value="FechaInicioAlquiler"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HistorialDetalleView1Iterator" id="FechaFinalAlquiler">
+      <AttrNames>
+        <Item Value="FechaFinalAlquiler"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HistorialDetalleView1Iterator" id="AccionUsuario">
+      <AttrNames>
+        <Item Value="AccionUsuario"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HistorialDetalleView1Iterator" id="FechaSistema">
+      <AttrNames>
+        <Item Value="FechaSistema"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HistorialDetalleView1Iterator" id="Descripcion">
+      <AttrNames>
+        <Item Value="Descripcion"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="HistorialDetalleView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="HistorialDetalleView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="HistorialDetalleView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="HistorialDetalleView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="HistorialDetalleView1Iterator" id="HistorialDetalleView1">
+      <nodeDefinition DefName="gt.edu.umg.modelo.HistorialDetalleView" Name="HistorialDetalleView10">
+        <AttrNames>
+          <Item Value="IdDetalle"/>
+          <Item Value="CantidadProducto"/>
+          <Item Value="FechaInicioAlquiler"/>
+          <Item Value="FechaFinalAlquiler"/>
+          <Item Value="AccionUsuario"/>
+          <Item Value="FechaSistema"/>
+          <Item Value="Descripcion"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

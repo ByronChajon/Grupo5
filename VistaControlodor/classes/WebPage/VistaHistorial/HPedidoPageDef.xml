@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="HPedidoPageDef"
+                Package="WebPage.VistaHistorial">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="HistorialPedidoView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="HistorialPedidoView1Iterator"/>
+    <searchRegion Binds="HistorialPedidoView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="HistorialPedidoView1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="HistorialPedidoView1Iterator" id="IdPedido">
+      <AttrNames>
+        <Item Value="IdPedido"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HistorialPedidoView1Iterator" id="AccionUsuario">
+      <AttrNames>
+        <Item Value="AccionUsuario"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HistorialPedidoView1Iterator" id="EstadoPedido">
+      <AttrNames>
+        <Item Value="EstadoPedido"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HistorialPedidoView1Iterator" id="FechaSistema">
+      <AttrNames>
+        <Item Value="FechaSistema"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="HistorialPedidoView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="HistorialPedidoView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="HistorialPedidoView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="HistorialPedidoView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="HistorialPedidoView1Iterator" id="HistorialPedidoView1">
+      <nodeDefinition DefName="gt.edu.umg.modelo.HistorialPedidoView" Name="HistorialPedidoView10">
+        <AttrNames>
+          <Item Value="IdPedido"/>
+          <Item Value="AccionUsuario"/>
+          <Item Value="EstadoPedido"/>
+          <Item Value="FechaSistema"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

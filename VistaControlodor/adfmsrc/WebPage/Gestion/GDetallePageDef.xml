@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="GDetallePageDef"
+                Package="WebPage.Gestion">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="DetalleView1" RangeSize="25" DataControl="AppModuleDataControl" id="DetalleView1Iterator"/>
+    <searchRegion Binds="DetalleView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="DetalleView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="DetalleView1Iterator" id="DetalleView1">
+      <nodeDefinition DefName="gt.edu.umg.modelo.DetalleView" Name="DetalleView10">
+        <AttrNames>
+          <Item Value="IdDetalle"/>
+          <Item Value="IdPedido"/>
+          <Item Value="IdProducto"/>
+          <Item Value="CantidadProducto"/>
+          <Item Value="FechaInicioAlquiler"/>
+          <Item Value="FechaFinalAlquiler"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="DetalleView1Iterator" id="IdDetalle">
+      <AttrNames>
+        <Item Value="IdDetalle"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DetalleView1Iterator" id="IdPedido">
+      <AttrNames>
+        <Item Value="IdPedido"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DetalleView1Iterator" id="IdProducto">
+      <AttrNames>
+        <Item Value="IdProducto"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DetalleView1Iterator" id="CantidadProducto">
+      <AttrNames>
+        <Item Value="CantidadProducto"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DetalleView1Iterator" id="FechaInicioAlquiler">
+      <AttrNames>
+        <Item Value="FechaInicioAlquiler"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DetalleView1Iterator" id="FechaFinalAlquiler">
+      <AttrNames>
+        <Item Value="FechaFinalAlquiler"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="DetalleView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="DetalleView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="DetalleView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="DetalleView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="DetalleView1Iterator" id="Create" RequiresUpdateModel="true" Action="createRow"/>
+    <action IterBinding="DetalleView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>
